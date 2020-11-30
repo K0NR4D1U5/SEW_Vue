@@ -1,17 +1,15 @@
 <template>
-  <UE06></UE06>
+  <UE07></UE07>
 </template>
 
 <script>
 
-import UE04 from "@/components/UE04_Login/UE04";
-import UE05 from "@/components/UE05_WettkampfReihung/UE05";
-import UE06 from "@/components/UE06_WettkampfReihungv2/UE06";
+import UE07 from "@/components/UE07_WettkampfReihungv3/UE07";
 
 export default {
   name: 'App',
   components: {
-    UE06
+    UE07
   }
 }
 </script>
