@@ -3,8 +3,9 @@
     <div id="name">{{ competitor }}</div>
     <div id="sentence">{{ ranking }}</div>
     <div>
-      <md-radio v-for="(element, index) in taken" v-model="radio" :value="index" :@change="onSelectDifferenRadio(index)"
-                :disabled=element>{{index+1}}
+      <md-radio v-for="(element, index) in taken" :key="index" v-model="radio" :value="index"
+                @change="onSelectDifferentRadio(index)"
+                :disabled=element>{{ index + 1 }}
       </md-radio>
     </div>
   </div>
@@ -25,7 +26,7 @@ export default {
     }
   },
   methods: {
-    onSelectDifferenRadio(rank) {
+    onSelectDifferentRadio(rank) {
       this.taken[rank] = true
       this.ranking = rank + 1 + ". Platz"
       this.$emit("onSelect", [rank, this.last])
@@ -47,11 +48,11 @@ export default {
 #name {
   margin-top: 15px;
   font-weight: bold;
-  width: 10em;
+  width: 12em;
 }
 
 #sentence {
   margin-top: 15px;
-  width: 15em;
+  width: 8em;
 }
 </style>

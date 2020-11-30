@@ -7,7 +7,7 @@
         </div>
       </md-app-toolbar>
       <div id="padder">
-        <Wettbewerber v-for="competitor in names" :competitor="competitor" :taken="taken"
+        <Wettbewerber v-for="competitor in names" :key="competitor" :competitor="competitor" :taken="taken"
                       @onSelect=changeTaken($event)></Wettbewerber>
       </div>
     </md-card>
@@ -34,10 +34,8 @@ export default {
     }
   },
   created() {
-    this.names = namesFile.split("\n")
-    this.names.slice(0, (Math.random() * 11) + 5)
-    this.taken = new Array(this.names.length)
-    this.taken.fill(false)
+    this.names = namesFile.split("\n").slice(0, (Math.random() * 11) + 5)
+    this.taken = new Array(this.names.length).fill(false)
   },
   methods: {
     changeTaken(rank) {
@@ -54,8 +52,6 @@ export default {
 }
 
 .login-form {
-  min-width: 25em;
-  max-width: 70em;
   margin: 10px;
 }
 </style>
