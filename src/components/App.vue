@@ -1,17 +1,16 @@
 <template>
-  <UE07></UE07>
+    <UE09></UE09>
 </template>
 
 <script>
+    import UE09 from "./UE09_FormularMitValidierung/UE09";
 
-import UE07 from "@/components/UE07_WettkampfReihungv3/UE07";
-
-export default {
-  name: 'App',
-  components: {
-    UE07
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            UE09
+        }
+    }
 </script>
 
 <style scoped>
